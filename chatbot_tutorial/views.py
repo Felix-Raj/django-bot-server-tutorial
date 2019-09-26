@@ -101,7 +101,7 @@ class TelegramBotView(generic.View):
 
     # Post function to handle messages in whatever format they come
     def post(self, request, *args, **kwargs):
-        TELEGRAM_TOKEN = '708241383:AAF6c7kwoPN3MsYJNQrc2L2XSdjSeUxZ4X0'
+        TELEGRAM_TOKEN = 'PASTE_TOKEN'
         update_stats(request)
         message = get_message_from_request(request)
         send_messages(message, TELEGRAM_TOKEN)
