@@ -10,3 +10,6 @@ class BotHit(models.Model):
     user = models.ForeignKey(to=BotUser, on_delete=models.CASCADE)
     button = models.CharField(max_length=200)
     count = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['user', '-count']
