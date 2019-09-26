@@ -1,0 +1,20 @@
+<table style="border:solid">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Keyword</th>
+            <th>Hits</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bothit in bothit_list %}
+        <tr>
+            <td>{{bothit.user.user_id}}</td>
+            <td>{{bothit.user.username}}</td>
+            <td>{{bothit.button}}</td>
+            <td>{{bothit.count}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
