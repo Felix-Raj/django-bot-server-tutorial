@@ -124,3 +124,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# heroku confs
+from django_heroku import settings
+settings(locals())
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
