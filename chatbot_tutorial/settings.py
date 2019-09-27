@@ -25,7 +25,7 @@ SECRET_KEY = 'r^3o#=8lu#*y66k7!a_4^82a#0n)kau%5!y2)!oxs40@tn@22-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '66d41155.ngrok.io']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,6 +130,7 @@ from django_heroku import settings
 settings(locals())
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DEBUG = dj_database_url.config('DEBUG', default=False)
 
 try:
     from local_settings import *
